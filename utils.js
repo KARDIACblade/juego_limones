@@ -13,3 +13,8 @@ function probarAleatorio (){
     console.log(aleatorio);
     
 }
+
+function mostrarEnSpan (idSpan,valor){
+    let componente = document.getElementById(idSpan);
+    componente.textContent = valor;
+}

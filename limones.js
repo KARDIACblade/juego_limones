@@ -14,6 +14,9 @@ let limonX=canvas.width/2;
 let limonY=0
 const ANCHO_LIMON = 20
 const ALTO_LIMON = 20
+//varialbel del puntaje y vidas
+let puntaje = 0;
+let vidas = 3;
 
 function iniciar (){
     dibujarSuelo();
@@ -66,14 +69,23 @@ function bajarLimon (){
     limonY = limonY + 10;
      actualizarCanva();
     detectarColision();
+
+    detectarPiso();
   
 }
 // funcion detectar colision
 function detectarColision(){
     if (limonX + ANCHO_LIMON > personajeX && limonX < personajeX + ANCHO_PERSONAJE
-        && limonY + ALTO_LIMON > personajeY && limonY < personajeY + ALTURA_PERSONAJE)
-     // alert("atrapado !!")
+        && limonY + ALTO_LIMON > personajeY && limonY < personajeY + ALTURA_PERSONAJE){
+     // alert("atrapado !!"
+          
         aparecerLimon();
+
+        puntaje = puntaje +1;
+       //  let componente = document.getElementById("txtPuntaje");
+       //  componente.textContent = puntaje;
+       mostrarEnSpan("txtPuntaje",puntaje);
+    }
 }
 // funcion aparecer limon al principio
 function aparecerLimon (){
@@ -81,4 +93,16 @@ function aparecerLimon (){
     limonY=0;
     //se debe actualizar
     actualizarCanva();
+}
+
+//funcion detectar el piso
+function detectarPiso (){
+    if(limonY+ALTO_LIMON==canvas.height-ALTURA_SUELO){
+        aparecerLimon();
+        vidas= vidas-1
+       // let componente = document.getElementById("txtVidas");
+        // componente.textContent = vidas;
+        // uilizo la funcion creada en utilitarios
+         mostrarEnSpan("txtVidas",vidas);
+    }
 }
