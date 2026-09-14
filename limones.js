@@ -18,7 +18,11 @@ const ALTO_LIMON = 20
 let puntaje = 0;
 let vidas = 3;
 
+let velocidadCaida=100;
+
 function iniciar (){
+    setInterval(bajarLimon,velocidadCaida);  //1erparametro nombre funcion,2 parametro velocidad milisegundos
+            
     dibujarSuelo();
     dibujarPersonaje();
     // dibujarLimon(); // dibujar limon
