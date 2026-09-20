@@ -14,14 +14,14 @@ let limonX=canvas.width/2;
 let limonY=0
 const ANCHO_LIMON = 20
 const ALTO_LIMON = 20
-//varialbel del puntaje y vidas
+//variable del puntaje y vidas
 let puntaje = 0;
 let vidas = 3;
 
 let velocidadCaida=100;
 
 function iniciar (){
-    setInterval(bajarLimon,velocidadCaida);  //1erparametro nombre funcion,2 parametro velocidad milisegundos
+    setInterval(bajarLimon,velocidadCaida);  //1erparametro nombre funcion,2 parametro velocidad milisegundos   
             
     dibujarSuelo();
     dibujarPersonaje();
@@ -108,5 +108,9 @@ function detectarPiso (){
         // componente.textContent = vidas;
         // uilizo la funcion creada en utilitarios
          mostrarEnSpan("txtVidas",vidas);
+         if(vidas==0){
+            alert("GAME OVER")
+
+         }
     }
 }
