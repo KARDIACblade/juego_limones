@@ -92,10 +92,12 @@ function detectarColision(){
        if (puntaje == 6){
         velocidadCaida=100
         clearInterval(intervaloCaida);
-         intervaloCaida=setInterval(bajarLimon,velocidadCaida)
+         intervaloCaida=setInterval(bajarLimon,velocidadCaida)  
        }
        if(puntaje==10){
+        clearInterval(intervaloCaida);
         alert("Eres el ganador del juego")
+        
        }
     }
 }
@@ -115,7 +117,9 @@ function detectarPiso (){
    
          mostrarEnSpan("txtVidas",vidas);
          if(vidas==0){
+            clearInterval(intervaloCaida);
             alert("GAME OVER")
+            
 
          }
     }
