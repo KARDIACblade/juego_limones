@@ -1,33 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Caza Estrellas</title>
-  <link rel="stylesheet" href="limones.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atrapar Limones</title>
+  <link rel="stylesheet" href="limones_mejorado.css"/>
   <script src="utils.js"></script>
-  
- 
 </head>
 <body onload="iniciar()">
-  <div class="contenedor">
-    <h1>Atrapar Limones</h1>
-    <p>Si del cielo te caen limones ..prepara limonada... </p>
-    <h2>Autor: Bladimir Paillacho</h2>
-    <canvas id = "areaJuego" width="600" height="400"></canvas>
-    <div class="panel">
-      <p>Puntaje: <span id="txtPuntaje">0</span></p>
+  <main class="contenedor">
+    <header class="encabezado">
+      <div class="icono-titulo">🍋</div>
+      <div>
+        <h1>Atrapar Limones</h1>
+        <p>Si del cielo te caen limones... ¡prepara limonada!</p>
+        <h2>Autor: Bladimir Paillacho</h2>
+      </div>
+    </header>
 
-      <p>Vidas: <span id="txtVidas">3</span></p>
+    <section class="juego">
+      <div class="marco-juego">
+        <canvas id="areaJuego" width="600" height="400"></canvas>
+      </div>
 
+      <div class="panel">
+        <div class="dato">
+          <span class="etiqueta">PUNTAJE</span>
+          <span class="valor" id="txtPuntaje">0</span>
+        </div>
+        <div class="separador"></div>
+        <div class="dato">
+          <span class="etiqueta">VIDAS</span>
+          <span class="valor vidas" id="txtVidas">3</span>
+        </div>
+      </div>
 
-    </div>
-    <div class="botones">
-      <button onclick="moverIzquierda();">Izquierda</button>
-      <button onclick="moverDerecha();">Derecha</button>
-    
-      <button onclick="reiniciar()">Reiniciar</button>
-    </div>
-  </div>
+      <div class="botones">
+        <button class="btn-movimiento" onclick="moverIzquierda();">◀ <span>Izquierda</span></button>
+        <button class="btn-movimiento" onclick="moverDerecha();"><span>Derecha</span> ▶</button>
+        <button class="btn-reiniciar" onclick="reiniciar()">↻ <span>Reiniciar</span></button>
+      </div>
+    </section>
+
+    <footer><span>🍋</span> Atrapa los limones y consigue la mayor puntuación</footer>
+  </main>
+
   <script src="limones.js"></script>
-  
 </body>
 </html>
