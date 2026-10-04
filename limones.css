@@ -26,6 +26,21 @@ body {
 
 .contenedor { width: min(100%, 900px); margin: 0 auto; }
 
+
+.logo-escuela {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.logo-escuela img {
+  display: block;
+  width: 150px;
+  max-width: 60%;
+  height: auto;
+}
+ 
+
 .encabezado {
   display: flex;
   align-items: center;
