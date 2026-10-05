@@ -1,20 +1,12 @@
-/* ==========================================================================
-   PALETA POKÉMON & VARIABLES GLOBALES
-   ========================================================================== */
 :root {
-  --pokeball-red: #cc1414;
-  --pokeball-dark-red: #8b0000;
-  --pokemon-blue: #3b4cca;
-  --pokemon-yellow: #ffde00;
-  --pokemon-yellow-dark: #b3a125;
-  --gb-screen-bg: #8b956d;
-  --gb-screen-dark: #1b2a0a;
-  --pokedex-bg: #e63946;
-  --pokedex-dark-frame: #2b2d42;
-  --texto: #ffffff;
-  --texto-retro: #101010;
-  --font-pixel: "Press Start 2P", monospace;
-  --font-retro: "VT323", monospace;
+  --amarillo: #facc15;
+  --amarillo-brillante: #fde047;
+  --verde: #84cc16;
+  --verde-oscuro: #365314;
+  --fondo-panel: rgba(10, 28, 17, 0.88);
+  --borde: rgba(190, 242, 100, 0.35);
+  --texto: #f8fafc;
+  --texto-suave: #bbf7d0;
 }
 
 * { box-sizing: border-box; }
@@ -22,112 +14,86 @@
 body {
   min-height: 100vh;
   margin: 0;
-  padding: 25px 15px;
-  font-family: var(--font-pixel);
+  padding: 32px 16px;
+  font-family: "Baloo 2", Arial, sans-serif;
   color: var(--texto);
   text-align: center;
-  background: 
-    radial-gradient(circle at 20% 20%, rgba(255, 222, 0, 0.15), transparent 30%),
-    radial-gradient(circle at 80% 80%, rgba(59, 76, 202, 0.2), transparent 30%),
-    linear-gradient(135deg, #1d2d50 0%, #131a28 100%);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(132, 204, 22, 0.18), transparent 28%),
+    radial-gradient(circle at 85% 85%, rgba(250, 204, 21, 0.12), transparent 30%),
+    linear-gradient(145deg, #020617 0%, #07130b 48%, #10200f 100%);
 }
 
-.contenedor { 
-  width: min(100%, 850px); 
-  margin: 0 auto; 
-}
+.contenedor { width: min(100%, 900px); margin: 0 auto; }
 
-/* Logo Escuela */
+
 .logo-escuela {
   display: flex;
   justify-content: center;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px;
 }
 
 .logo-escuela img {
   display: block;
-  width: 140px;
+  width: 150px;
   max-width: 60%;
   height: auto;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
 }
+ 
 
-/* Encabezado Estilo Batalla Pokémon */
 .encabezado {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  margin-bottom: 20px;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.4);
-  border: 4px solid var(--pokemon-yellow);
-  border-radius: 16px;
-  box-shadow: 0 6px 0 var(--pokemon-yellow-dark), 0 10px 20px rgba(0,0,0,0.5);
+  gap: 18px;
+  margin-bottom: 22px;
+  padding: 8px 10px;
 }
 
 .icono-titulo {
   display: grid;
   place-items: center;
-  width: 64px;
-  height: 64px;
-  border: 4px solid #ffffff;
-  border-radius: 50%;
-  background: linear-gradient(180deg, var(--pokeball-red) 50%, #ffffff 50%);
-  box-shadow: 0 0 15px rgba(255, 222, 0, 0.6), inset 0 0 0 4px #000;
-  font-size: 30px;
-  animation: pulse-pokeball 2s infinite ease-in-out;
-}
-
-@keyframes pulse-pokeball {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
+  width: 70px;
+  height: 70px;
+  border: 2px solid rgba(250, 204, 21, 0.65);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #facc15, #a3e635);
+  box-shadow: 0 0 25px rgba(250, 204, 21, 0.22), inset 0 2px 5px rgba(255,255,255,.35);
+  font-size: 40px;
+  transform: rotate(-7deg);
 }
 
 h1 {
   margin: 0;
-  color: var(--pokemon-yellow);
-  font-family: var(--font-pixel);
-  font-size: clamp(1.1rem, 3vw, 1.7rem);
-  line-height: 1.4;
-  text-shadow: 3px 3px 0 #2a75bb, -2px -2px 0 #000;
+  color: var(--amarillo-brillante);
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(1.25rem, 3.5vw, 2rem);
+  line-height: 1.45;
+  text-shadow: 0 3px 0 #854d0e, 0 0 18px rgba(250, 204, 21, .25);
 }
 
-.encabezado p { 
-  margin: 8px 0 4px; 
-  color: #a8dadc; 
-  font-size: 0.65rem; 
-  letter-spacing: 1px;
-}
+.encabezado p { margin: 10px 0 2px; color: var(--texto-suave); font-size: 1.12rem; font-weight: 600; }
+h2 { margin: 0; color: #86efac; font-size: .92rem; font-weight: 600; opacity: .85; }
 
-h2 { 
-  margin: 0; 
-  color: var(--pokemon-yellow); 
-  font-size: 0.55rem; 
-  opacity: 0.9; 
-}
-
-/* Panel Estilo Pokédex / Consola Arcade */
 .juego {
   position: relative;
-  padding: 24px;
-  border: 5px solid #1a1a1a;
-  border-radius: 24px;
-  background: linear-gradient(180deg, var(--pokeball-red) 0%, var(--pokeball-dark-red) 100%);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 4px 0 rgba(255,255,255,0.3);
+  padding: 22px;
+  border: 1px solid var(--borde);
+  border-radius: 28px;
+  background: var(--fondo-panel);
+  box-shadow: 0 24px 70px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter: blur(10px);
 }
 
-/* Pantalla LCD Game Boy para el Canvas */
 .marco-juego {
   position: relative;
   width: fit-content;
   max-width: 100%;
   margin: 0 auto;
-  padding: 12px;
-  border-radius: 12px;
-  background: var(--pokedex-dark-frame);
-  border: 4px solid #101010;
-  box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+  padding: 7px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #bef264, #facc15, #65a30d);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 12px 35px rgba(0,0,0,.45);
 }
 
 canvas {
@@ -135,128 +101,77 @@ canvas {
   width: 100%;
   max-width: 600px;
   height: auto;
-  border: 3px solid #3a4030;
-  border-radius: 6px;
-  background-color: var(--gb-screen-bg);
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+  border: 2px solid #1a2e05;
+  border-radius: 12px;
+  background-color: #111827;
+  box-shadow: inset 0 0 35px rgba(0,0,0,.35);
 }
 
-/* Panel de Datos / Interfaz de Menú de Juego */
 .panel {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 20px;
-  width: min(100%, 540px);
-  margin: 20px auto 16px;
-  padding: 14px 20px;
-  border: 4px solid var(--pokemon-yellow);
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 6px 0 var(--pokemon-yellow-dark), inset 0 0 10px rgba(0,0,0,0.1);
+  justify-content: center;
+  gap: 32px;
+  width: min(100%, 520px);
+  margin: 22px auto 18px;
+  padding: 13px 24px;
+  border: 1px solid rgba(190,242,100,.2);
+  border-radius: 16px;
+  background: rgba(2,6,23,.72);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
 }
 
-.dato { 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  gap: 10px; 
-}
+.panel p { margin: 0; }
+.dato { display: flex; align-items: center; justify-content: center; gap: 12px; min-width: 150px; }
+.etiqueta { color: #86efac; font-family: "Press Start 2P", monospace; font-size: .58rem; letter-spacing: 1px; }
+.valor { min-width: 48px; padding: 5px 10px; border-radius: 10px; color: #422006; background: var(--amarillo); font-family: "Press Start 2P", monospace; font-size: .85rem; box-shadow: 0 0 16px rgba(250,204,21,.2); }
+.valor.vidas { background: #bef264; }
+.separador { width: 1px; height: 34px; background: rgba(190,242,100,.25); }
 
-.etiqueta { 
-  color: var(--texto-retro); 
-  font-family: var(--font-pixel); 
-  font-size: 0.65rem; 
-}
-
-.valor { 
-  min-width: 50px; 
-  padding: 6px 12px; 
-  border-radius: 6px; 
-  color: #ffffff; 
-  background: var(--pokemon-blue); 
-  font-family: var(--font-pixel); 
-  font-size: 0.85rem; 
-  border: 2px solid #000;
-  box-shadow: 2px 2px 0 #000;
-}
-
-.valor.vidas { 
-  background: var(--pokeball-red); 
-}
-
-.separador { 
-  width: 4px; 
-  height: 30px; 
-  background: var(--pokedex-dark-frame); 
-  border-radius: 2px;
-}
-
-/* Botones Estilo Mando Game Boy / Pokédex */
-.botones { 
-  display: flex; 
-  flex-wrap: wrap; 
-  justify-content: center; 
-  gap: 14px; 
-}
+.botones { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 
 .botones button {
-  border: 3px solid #000;
-  border-radius: 10px;
+  border: 0;
+  border-radius: 13px;
   padding: 12px 20px;
-  color: #000;
-  background: linear-gradient(180deg, #ffffff 0%, var(--pokemon-yellow) 100%);
-  font-family: var(--font-pixel);
-  font-size: 0.75rem;
+  color: #172554;
+  background: linear-gradient(180deg, #fef08a, #facc15);
+  font-family: "Baloo 2", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 5px 0 #8b7d00, 0 8px 15px rgba(0,0,0,0.4);
-  transition: all 0.1s ease;
+  box-shadow: 0 5px 0 #a16207, 0 8px 18px rgba(0,0,0,.3);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
 }
 
-.botones button:hover { 
-  transform: translateY(-2px); 
-  box-shadow: 0 7px 0 #8b7d00, 0 10px 18px rgba(0,0,0,0.5); 
-  background: var(--pokemon-yellow);
-}
-
-.botones button:active { 
-  transform: translateY(4px); 
-  box-shadow: 0 1px 0 #8b7d00; 
-}
+.botones button:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 7px 0 #a16207, 0 12px 22px rgba(0,0,0,.35); }
+.botones button:active { transform: translateY(4px); box-shadow: 0 1px 0 #a16207, 0 4px 10px rgba(0,0,0,.3); }
 
 .botones .btn-reiniciar {
-  color: #ffffff;
-  background: linear-gradient(180deg, #3b4cca 0%, #1d2d50 100%);
-  box-shadow: 0 5px 0 #101a35, 0 8px 15px rgba(0,0,0,0.4);
+  color: #ecfdf5;
+  background: linear-gradient(180deg, #65a30d, #3f6212);
+  box-shadow: 0 5px 0 #365314, 0 8px 18px rgba(0,0,0,.3);
 }
 
-.botones .btn-reiniciar:hover { 
-  background: #3b4cca;
-  box-shadow: 0 7px 0 #101a35; 
-}
+.botones .btn-reiniciar:hover { box-shadow: 0 7px 0 #365314, 0 12px 22px rgba(0,0,0,.35); }
 
-/* Footer */
-footer { 
-  margin-top: 20px; 
-  color: var(--pokemon-yellow); 
-  font-size: 0.6rem; 
-  line-height: 1.6;
-}
+footer { margin-top: 18px; color: #86efac; font-size: .88rem; opacity: .72; }
+footer span { margin-right: 5px; }
 
-footer span { 
-  background: var(--pokeball-red);
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-right: 6px;
-  border: 1px solid #fff;
-}
-
-/* Responsive */
 @media (max-width: 650px) {
-  body { padding: 15px 8px; }
-  .encabezado { flex-direction: column; gap: 8px; }
-  .juego { padding: 14px; border-radius: 16px; }
-  .panel { flex-direction: column; gap: 10px; padding: 12px; }
-  .separador { width: 80%; height: 3px; }
-  .botones button { flex: 1 1 100%; font-size: 0.65rem; }
+  body { padding: 18px 10px; }
+  .encabezado { flex-direction: column; gap: 10px; }
+  .icono-titulo { width: 58px; height: 58px; font-size: 32px; }
+  .juego { padding: 12px; border-radius: 20px; }
+  .panel { gap: 12px; padding: 12px 8px; }
+  .dato { min-width: 0; flex-direction: column; gap: 5px; }
+  .separador { height: 45px; }
+  .botones button { flex: 1 1 130px; padding: 11px 14px; }
+}
+
+@media (max-width: 400px) {
+  .botones button span { font-size: .9rem; }
+  .panel { gap: 8px; }
+  .etiqueta { font-size: .5rem; }
+  .valor { font-size: .72rem; }
 }
